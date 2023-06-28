@@ -17,7 +17,7 @@ body {
     color: var(--color-text);
     background-color: var(--color-background);
 	font-family: 'Ysabeau Office', sans-serif;
-	font-size: 14px;
+	font-size: 16px;
 }
 
 .wrapper {
@@ -37,7 +37,7 @@ header {
 .header-content {
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    padding: 12px;
 	margin: 32px auto;
     width: 100%;
 	max-width: 1600px;
@@ -46,9 +46,9 @@ header {
 header button {
     padding: 12px;
     background-color: var(--color-background);
-    border: none;
+    border: 1px solid gray;
     border-radius: 8px;
-    font-size: 18px;
+    font-size: 24px;
     transition: box-shadow 0.3s;
     cursor: pointer;
 }
@@ -72,15 +72,23 @@ header button:hover {
 }
 
 .filters {
+	position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+	flex-direction: column;
     width: 100%;
     padding: 30px 20px;
 }
 
 .filters select {
     border-right: 20px solid transparent;
-    text-indent: 5px;
+}
+
+.icon {
+	position: absolute;
+	top: 55px;
+	left: 28px;
+	font-size: 14px;
 }
 
 ul {
@@ -122,6 +130,15 @@ li img {
 @media (min-width: 820px) {
 	ul {
 		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.filters {
+		justify-content: space-between;
+		flex-direction: row;
+	}
+
+	.icon {
+		top: 56px;
 	}
 }
 
