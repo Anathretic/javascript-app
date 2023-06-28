@@ -4,31 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript App</title>
+    <title>Countrypedia</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Office:wght@300;400;500;700&display=swap"
         rel="stylesheet">
     <script src="https://kit.fontawesome.com/e3d334fd4a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/icon.svg">
 </head>
 
 <body>
 
     <header>
         <div class="header-content">
-            <h1>Which is your country?</h1>
-            <button><i class="fa-regular fa-moon"></i> Dark Mode</button>
+            <h1>Countrypedia</h1>
+            <button><i class="fa-regular fa-moon"></i></button>
         </div>
     </header>
     <div class="wrapper">
         <main id="root">
             <div class="filters">
                 <input type="text" id="query" placeholder="Search for a country..">
+                <i class="fa-solid fa-magnifying-glass icon"></i>
                 <select name="region" id="region">
                     <option value="default">Filter by region..</option>
                     <option value="Europe">Europe</option>
-                    <option value="America">America</option>
+                    <option value="America">Americas</option>
                     <option value="Asia">Asia</option>
                     <option value="Africa">Africa</option>
                     <option value="Oceania">Oceania</option>
