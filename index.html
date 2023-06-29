@@ -23,20 +23,19 @@
         </div>
     </header>
     <div class="wrapper">
-        <main id="root">
-            <div class="filters">
-                <input type="text" id="query" placeholder="Search for a country..">
-                <i class="fa-solid fa-magnifying-glass icon"></i>
-                <select name="region" id="region">
-                    <option value="default">Filter by region..</option>
-                    <option value="Europe">Europe</option>
-                    <option value="America">Americas</option>
-                    <option value="Asia">Asia</option>
-                    <option value="Africa">Africa</option>
-                    <option value="Oceania">Oceania</option>
-                </select>
-            </div>
-        </main>
+        <div class="filters">
+            <input type="text" id="query" placeholder="Search for a country..">
+            <i class="fa-solid fa-magnifying-glass icon"></i>
+            <select name="region" id="region">
+                <option value="">Filter by region..</option>
+                <option value="Europe">Europe</option>
+                <option value="Americas">Americas</option>
+                <option value="Asia">Asia</option>
+                <option value="Africa">Africa</option>
+                <option value="Oceania">Oceania</option>
+            </select>
+        </div>
+        <main id="root"></main>
     </div>
 
     <script type="module" src="js/utils.js"></script>
