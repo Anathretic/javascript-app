@@ -55,5 +55,6 @@ const createListElement = countries => {
 
 export const countriesList = countries => {
 	const rootElement = document.querySelector('#root')
+	rootElement.innerHTML = '';
 	rootElement.appendChild(createListElement(countries))
 }

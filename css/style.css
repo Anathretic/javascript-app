@@ -76,8 +76,8 @@ header button:hover {
     display: flex;
     justify-content: center;
 	flex-direction: column;
-    width: 100%;
     padding: 30px 20px;
+	margin: 30px;
 }
 
 .filters select {
