@@ -6,82 +6,96 @@
 	padding: 0;
 }
 
-:root {
-	--color-text: hsl(200, 15%, 8%);
-	--color-input: hsl(0, 0%, 52%);
+[data-mode='light'] {
 	--color-background: hsl(0, 0%, 96%);
-	--white: hsl(0, 0%, 100%);
+	--color-input: hsl(0, 0%, 100%);
+	--color-text: hsl(200, 15%, 8%);
+	--special-color: hsl(0, 0%, 0%);
+	--box-shadow: rgba(66, 68, 90, 1);
+}
+
+[data-mode='dark'] {
+	--color-background: hsl(200, 15%, 8%);
+	--color-input: hsl(0, 0%, 0%);
+	--color-text: hsl(0, 0%, 96%);
+	--special-color: hsl(0, 0%, 100%);
+	--box-shadow: rgb(165, 167, 189);
 }
 
 body {
-    color: var(--color-text);
-    background-color: var(--color-background);
+	color: var(--color-text);
+	background-color: var(--color-background);
 	font-family: 'Ysabeau Office', sans-serif;
 	font-size: 16px;
 }
 
 .wrapper {
-    width: 100%;
+	width: 100%;
 	max-width: 1600px;
 	margin: 0 auto;
 }
 
 main {
-    padding: 0 32px;
+	padding: 0 32px;
 }
 
 header {
-    border-bottom: 1px solid black;
+	border-bottom: 2px solid var(--special-color);
 }
 
 .header-content {
-    display: flex;
-    justify-content: space-between;
-    padding: 12px;
+	display: flex;
+	justify-content: space-between;
+	padding: 12px;
 	margin: 32px auto;
-    width: 100%;
+	width: 100%;
 	max-width: 1600px;
 }
 
 header button {
-    padding: 12px;
-    background-color: var(--color-background);
-    border: 1px solid gray;
-    border-radius: 8px;
-    font-size: 24px;
-    transition: box-shadow 0.3s;
-    cursor: pointer;
+	padding: 12px;
+	height: 56px;
+	width: 52px;
+	background-color: var(--color-background);
+	color: var(--color-text);
+	border: 2px solid var(--special-color);
+	border-radius: 8px;
+	font-size: 24px;
+	transition: box-shadow 0.3s;
+	cursor: pointer;
 }
 
 header button:hover {
-    box-shadow: 0px 0px 30px -10px rgba(66, 68, 90, 1);
+	box-shadow: 0px 0px 30px -10px var(--box-shadow);
 }
 
 .filters select,
 .filters input {
-    padding: 15px 30px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 8px;
-    box-shadow: 0px 0px 30px -15px rgba(66, 68, 90, 1);
+	padding: 15px 30px;
+	margin: 10px 0;
+	border: none;
+	border-radius: 8px;
+	background-color: var(--color-input);
+	color: var(--color-text);
+	box-shadow: 0px 0px 30px -15px var(--box-shadow);
 }
 
 .filters select:focus,
 .filters input:focus {
-    outline: 1px solid black;
+	outline: 1px solid var(--special-color);
 }
 
 .filters {
 	position: relative;
-    display: flex;
-    justify-content: center;
+	display: flex;
+	justify-content: center;
 	flex-direction: column;
-    padding: 30px 20px;
+	padding: 30px 20px;
 	margin: 30px;
 }
 
 .filters select {
-    border-right: 20px solid transparent;
+	border-right: 20px solid transparent;
 }
 
 .icon {
@@ -89,6 +103,7 @@ header button:hover {
 	top: 55px;
 	left: 28px;
 	font-size: 14px;
+	color: none;
 }
 
 ul {
@@ -101,8 +116,8 @@ ul {
 
 li {
 	border-radius: 10px;
-	box-shadow: 0px 0px 30px -10px rgba(66, 68, 90, 1);
-    text-align: center;
+	box-shadow: 0px 0px 30px -10px var(--box-shadow);
+	text-align: center;
 	overflow: hidden;
 }
 
