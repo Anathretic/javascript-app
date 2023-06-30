@@ -3,6 +3,9 @@ import { countriesList } from './utils.js'
 const searchInput = document.querySelector('#query')
 const regionSelect = document.querySelector('#region')
 
+const body = document.querySelector('body')
+const darkModeBtn = document.querySelector('.dark-mode-btn')
+
 const API_URL_ALL = 'https://restcountries.com/v3.1/all'
 
 let countries
@@ -31,6 +34,16 @@ const dataAndRenderFilter = () => {
 	countriesList(filteredCountries)
 }
 
+const handleDarkMode = () => {
+	if (body.getAttribute('data-mode') === 'light') {
+		body.setAttribute('data-mode', 'dark')
+		darkModeBtn.innerHTML = '<i class="fa-solid fa-sun"></i>'
+	} else {
+		body.setAttribute('data-mode', 'light')
+		darkModeBtn.innerHTML = '<i class="fa-solid fa-moon"></i>'
+	}
+}
+
 searchInput.addEventListener('input', e => {
 	query = e.target.value.toLowerCase().trim()
 	dataAndRenderFilter()
@@ -40,3 +53,5 @@ regionSelect.addEventListener('change', e => {
 	region = e.target.value
 	dataAndRenderFilter()
 })
+
+darkModeBtn.addEventListener('click', handleDarkMode)
