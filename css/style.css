@@ -26,7 +26,7 @@ body {
 	color: var(--color-text);
 	background-color: var(--color-background);
 	font-family: 'Ysabeau Office', sans-serif;
-	font-size: 16px;
+	font-size: 1em;
 }
 
 .wrapper {
@@ -36,31 +36,31 @@ body {
 }
 
 main {
-	padding: 0 32px;
+	padding: 0 2em;
 }
 
 header {
+	margin: auto;
 	border-bottom: 2px solid var(--special-color);
 }
 
 .header-content {
 	display: flex;
 	justify-content: space-between;
-	padding: 12px;
-	margin: 32px auto;
-	width: 100%;
+	padding: 0.75em 2em;
+	margin: 2em auto;
 	max-width: 1600px;
 }
 
 header button {
-	padding: 12px;
+	padding: 0.75rem;
 	height: 56px;
 	width: 52px;
 	background-color: var(--color-background);
 	color: var(--color-text);
 	border: 2px solid var(--special-color);
 	border-radius: 8px;
-	font-size: 24px;
+	font-size: 1.5em;
 	transition: box-shadow 0.3s;
 	cursor: pointer;
 }
@@ -71,8 +71,8 @@ header button:hover {
 
 .filters select,
 .filters input {
-	padding: 15px 30px;
-	margin: 10px 0;
+	padding: 1rem 2rem;
+	margin: 0.75rem 0;
 	border: none;
 	border-radius: 8px;
 	background-color: var(--color-input);
@@ -90,8 +90,8 @@ header button:hover {
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-	padding: 30px 20px;
-	margin: 30px;
+	padding: 2em 1.2em;
+	margin: 1.8em;
 }
 
 .filters select {
@@ -100,17 +100,16 @@ header button:hover {
 
 .icon {
 	position: absolute;
-	top: 55px;
-	left: 28px;
-	font-size: 14px;
-	color: none;
+	top: 59px;
+	left: 29px;
+	font-size: 1em;
 }
 
 ul {
 	display: grid;
 	grid-template-columns: repeat(1, 1fr);
-	gap: 60px;
-	margin: 20px;
+	gap: 3em;
+	margin: 1em;
 	list-style: none;
 }
 
@@ -127,13 +126,13 @@ li img {
 }
 
 .info-container {
-	padding: 30px 20px;
+	padding: 2em 1em;
 }
 
 .country-name {
 	display: block;
-	font-size: 18px;
-	margin-bottom: 20px;
+	font-size: 1.2em;
+	margin-bottom: 2em;
 }
 
 @media (min-width: 600px) {
@@ -143,6 +142,10 @@ li img {
 }
 
 @media (min-width: 820px) {
+	.header-content {
+		padding: 0.75em 3em;
+	}
+
 	ul {
 		grid-template-columns: repeat(3, 1fr);
 	}
@@ -153,7 +156,7 @@ li img {
 	}
 
 	.icon {
-		top: 56px;
+		top: 60px;
 	}
 }
 
