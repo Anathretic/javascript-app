@@ -22,23 +22,36 @@
             <button class="dark-mode-btn"><i class="fa-solid fa-moon"></i></i></button>
         </div>
     </header>
-    <div class="wrapper">
-        <div class="filters">
-            <input type="text" id="query" placeholder="Search for a country..">
-            <i class="fa-solid fa-magnifying-glass icon"></i>
-            <select name="region" id="region">
-                <option value="">Filter by region..</option>
-                <option value="Europe">Europe</option>
-                <option value="Americas">Americas</option>
-                <option value="Asia">Asia</option>
-                <option value="Africa">Africa</option>
-                <option value="Oceania">Oceania</option>
-            </select>
+
+    <main>
+        <div class="wrapper">
+            <div class="filters">
+                <input type="text" id="query" placeholder="Search for a country..">
+                <i class="fa-solid fa-magnifying-glass icon"></i>
+                <select name="region" id="region">
+                    <option value="">Filter by continent..</option>
+                    <option value="Africa">Africa</option>
+                    <option value="Antarctica">Antarctica</option>
+                    <option value="Asia">Asia</option>
+                    <option value="Europe">Europe</option>
+                    <option value="North America">North America</option>
+                    <option value="Oceania">Oceania</option>
+                    <option value="South America">South America</option>
+                </select>
+            </div>
+            <div class="more-info">
+                <div class="container">
+                    <div class="container-info"></div>
+                    <div class="container-btn"><i class="fa-solid fa-x"></i></div>
+                </div>
+            </div>
+            <div class="countries-section" id="root"></div>
         </div>
-        <main id="root"></main>
-    </div>
+    </main>
 
     <script type="module" src="js/utils.js"></script>
+    <script type="module" src="js/dashboard.js"></script>
+    <script type="module" src="js/detail.js"></script>
     <script type="module" src="js/app.js"></script>
 </body>
 

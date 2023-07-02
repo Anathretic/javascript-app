@@ -1,38 +1,13 @@
-import { countriesList } from './utils.js'
+import { renderDashboard } from './dashboard.js'
+import { renderDetail } from './detail.js'
 
-const searchInput = document.querySelector('#query')
-const regionSelect = document.querySelector('#region')
-
+const main = document.getElementById('root')
 const body = document.querySelector('body')
+const popup = document.querySelector('.more-info')
+const closeBtn = document.querySelector('.container-btn')
 const darkModeBtn = document.querySelector('.dark-mode-btn')
 
-const API_URL_ALL = 'https://restcountries.com/v3.1/all'
-
-let countries
-let query = ''
-let region = ''
-
-fetch(API_URL_ALL)
-	.then(res => res.json())
-	.then(rawCountry => {
-		countries = rawCountry.map(country => {
-			return {
-				name: country.name.official,
-				flag: country.flags.png,
-				capital: country.capital && country.capital[0],
-				region: country.region,
-			}
-		})
-		countriesList(countries)
-	})
-
-const dataAndRenderFilter = () => {
-	const filteredCountries = countries.filter(country => {
-		return country.name.toLowerCase().includes(query) && (!region || country.region === region)
-	})
-
-	countriesList(filteredCountries)
-}
+renderDashboard()
 
 const handleDarkMode = () => {
 	if (body.getAttribute('data-mode') === 'light') {
@@ -44,14 +19,17 @@ const handleDarkMode = () => {
 	}
 }
 
-searchInput.addEventListener('input', e => {
-	query = e.target.value.toLowerCase().trim()
-	dataAndRenderFilter()
-})
+const showPopup = el => {
+	if (el.srcElement.alt) {
+		renderDetail(el.srcElement.id)
+		popup.classList.add('active')
+	}
+}
 
-regionSelect.addEventListener('change', e => {
-	region = e.target.value
-	dataAndRenderFilter()
-})
+const closePopup = () => {
+	popup.classList.remove('active')
+}
 
 darkModeBtn.addEventListener('click', handleDarkMode)
+closeBtn.addEventListener('click', closePopup)
+main.addEventListener('click', showPopup)
