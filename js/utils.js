@@ -39,12 +39,7 @@ const createCountryItemElement = country => {
 
 	infoContainer.appendChild(countryNameElement)
 	infoContainer.appendChild(createInfoElement('Continent', country.continents))
-
-	if (country.capital) {
-		infoContainer.appendChild(createInfoElement('Capital', country.capital))
-	} else {
-		infoContainer.appendChild(createInfoElement('Capital', 'N/A'))
-	}
+	infoContainer.appendChild(createInfoElement('Capital', country.capital))
 
 	countryElement.appendChild(infoContainer)
 
