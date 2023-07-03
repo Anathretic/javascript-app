@@ -16,7 +16,7 @@ export const renderDashboard = () => {
 				return {
 					name: country.name.official,
 					flag: country.flags.png,
-					capital: country.capital && country.capital[0],
+					capital: country.capital ? country.capital && country.capital[0] : 'N/A',
 					continents: country.continents[0],
 					code: country.cca3,
 				}
