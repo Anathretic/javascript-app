@@ -70,6 +70,7 @@ const createDetailElement = country => {
 	const flagElement = createFlagElement(country)
 	const detailName = document.createElement('strong')
 	detailName.innerText = country.name
+	detailName.classList.add('container-country-title')
 
 	detailContainer.appendChild(flagElement)
 	detailContainer.appendChild(detailName)
@@ -82,31 +83,13 @@ const createDetailElement = country => {
 	detailContainer.appendChild(createInfoElement('Top level domain', country.topLevelDomain))
 	detailContainer.appendChild(createInfoElement('Currencies', country.currencies))
 	detailContainer.appendChild(createInfoElement('Languages', country.languages))
+	detailContainer.appendChild(createInfoElement('Border countries', country.borders))
 
 	return detailContainer
-}
-
-const borderCountriesElement = country => {
-	const borderCountriesContainer = document.createElement('div')
-
-	const labelElement = document.createElement('strong')
-	labelElement.innerText = 'Border Countries'
-
-	borderCountriesContainer.appendChild(labelElement)
-
-	const borderElement = document.createElement('p')
-	borderElement.innerText = country.borders.join(', ')
-
-	borderCountriesContainer.appendChild(borderElement)
-
-	return borderCountriesContainer
 }
 
 export const renderCountryDetails = country => {
 	const detailWrapper = document.querySelector('.container-info')
 	detailWrapper.innerHTML = ''
 	detailWrapper.appendChild(createDetailElement(country))
-	if (country.borders && country.borders.length !== 0) {
-		detailWrapper.appendChild(borderCountriesElement(country))
-	}
 }
