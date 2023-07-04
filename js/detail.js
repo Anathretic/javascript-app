@@ -14,7 +14,7 @@ export const renderDetail = id => {
 				region: country.region,
 				subRegion: country.subregion ? country.subregion : 'N/A',
 				capital: country.capital ? country.capital && country.capital[0] : 'N/A',
-				topLevelDomain: country.tld[0],
+				topLevelDomain: country.tld ? country.tld[0] : 'N/A',
 				currencies: country.currencies
 					? Object.values(country.currencies)
 							.map(currency => currency.name)
