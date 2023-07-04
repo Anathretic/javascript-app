@@ -21,7 +21,7 @@ export const renderDetail = id => {
 							.join(', ')
 					: 'N/A',
 				languages: country.languages ? Object.values(country.languages).join(', ') : 'N/A',
-				borders: country.borders,
+				borders: country.borders ? country.borders.join(', ') : 'No border countries!',
 			}
 			renderCountryDetails(country)
 		})
