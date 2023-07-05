@@ -131,6 +131,31 @@ header button:hover {
 	padding: 0 2em;
 }
 
+.loading-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.loader {
+	position: relative;
+	display: inline-block;
+	width: 128px;
+	height: 128px;
+	border: 5px dotted var(--text-color);
+	border-radius: 50%;
+	animation: rotation 2s linear infinite;
+}
+
+@keyframes rotation {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
 ul {
 	display: grid;
 	grid-template-columns: repeat(1, 1fr);
@@ -274,6 +299,10 @@ li img:hover {
 }
 
 @media (min-width: 1024px) and (min-height: 768px) {
+	.loading-container {
+		padding-top: 50px;
+	}
+
 	.container::-webkit-scrollbar {
 		width: 8px;
 	}
