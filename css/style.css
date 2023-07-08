@@ -29,7 +29,7 @@
 body {
 	color: var(--text-color);
 	background-color: var(--background-color);
-	font-family: 'Ysabeau Office', sans-serif;
+	font-family: 'Ysabeau Infant', sans-serif;
 	font-size: 1em;
 }
 
@@ -138,7 +138,7 @@ body::-webkit-scrollbar-thumb {
 
 .use-instruction p {
 	padding: 1em;
-	border: 3px dashed black;
+	border: 3px dashed var(--text-color);
 	font-weight: none;
 }
 
@@ -150,6 +150,7 @@ body::-webkit-scrollbar-thumb {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	padding-bottom: 3em;
 }
 
 .loader {
@@ -275,11 +276,37 @@ li img:hover {
 	font-size: 1.2em;
 }
 
+.footer {
+	padding: 1em 1em 0;
+	border-top: 1px solid var(--special-color);
+	font-size: 1.5em;
+	text-align: center;
+}
+
+.footer-text {
+	padding: 1em;
+}
+
+.footer-icons {
+	padding: 0.5em 1em;
+}
+
+.footer-icons .fa-brands {
+	padding: 0.5em;
+	color: var(--text-color);
+	font-size: 1.5em;
+	transition: transform 0.5s;
+}
+
+.footer-icons .fa-brands:hover {
+	transform: rotate(360deg);
+}
+
 @media (max-width: 320px) {
 	.header-content {
 		padding: 0.75em;
 	}
-	
+
 	.use-instruction p {
 		border: none;
 		font-weight: bold;
@@ -352,12 +379,17 @@ li img:hover {
 	.use-instruction {
 		font-size: 1.4em;
 	}
-	
+
 	ul {
 		grid-template-columns: repeat(4, 1fr);
 	}
 
 	.container {
 		width: 50%;
+		font-size: 1.1em;
+	}
+
+	.container-country-title {
+		font-size: 1.4em;
 	}
 }
