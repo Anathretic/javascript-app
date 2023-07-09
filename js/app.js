@@ -4,7 +4,7 @@ import { renderDetail } from './detail.js'
 const main = document.getElementById('root')
 const body = document.querySelector('body')
 const popup = document.querySelector('.more-info')
-const closeBtn = document.querySelector('.container-btn')
+const closeBtn = document.querySelector('.more-info-btn')
 const darkModeBtn = document.querySelector('.dark-mode-btn')
 
 renderDashboard()
