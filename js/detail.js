@@ -1,11 +1,24 @@
 import { renderCountryDetails } from './utils.js'
 
+const secondLoaderElement = document.getElementById('second-loading-container')
+
+const showLoader = () => {
+	secondLoaderElement.style.display = 'inline-block'
+}
+
+const hideLoader = () => {
+	secondLoaderElement.style.display = 'none'
+}
+
 export const renderDetail = id => {
 	const API_URL_DETAIL = `https://restcountries.com/v3.1/alpha/${id}`
+
+	showLoader()
 
 	fetch(API_URL_DETAIL)
 		.then(res => res.json())
 		.then(([country]) => {
+			hideLoader()
 			country = {
 				flag: country.flags.png,
 				name: country.name.official,
