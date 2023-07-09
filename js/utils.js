@@ -31,7 +31,7 @@ const createCountryItemElement = country => {
 	countryElement.appendChild(createFlagElement(country))
 
 	const infoContainer = document.createElement('div')
-	infoContainer.classList.add('info-container')
+	infoContainer.classList.add('country-container')
 
 	const countryNameElement = document.createElement('strong')
 	countryNameElement.innerText = country.name
@@ -65,12 +65,11 @@ export const countriesList = countries => {
 
 const createDetailElement = country => {
 	const detailContainer = document.createElement('div')
-	detailContainer.classList.add('detail-container')
 
 	const flagElement = createFlagElement(country)
 	const detailName = document.createElement('strong')
 	detailName.innerText = country.name
-	detailName.classList.add('container-country-title')
+	detailName.classList.add('more-info-title')
 
 	detailContainer.appendChild(flagElement)
 	detailContainer.appendChild(detailName)
@@ -89,7 +88,7 @@ const createDetailElement = country => {
 }
 
 export const renderCountryDetails = country => {
-	const detailWrapper = document.querySelector('.container-info')
+	const detailWrapper = document.querySelector('.more-info-box')
 	detailWrapper.innerHTML = ''
 	detailWrapper.appendChild(createDetailElement(country))
 }

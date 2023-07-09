@@ -127,7 +127,7 @@ body::-webkit-scrollbar-thumb {
 	font-size: 1em;
 }
 
-.use-instruction {
+.instructions {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -136,7 +136,7 @@ body::-webkit-scrollbar-thumb {
 	text-align: center;
 }
 
-.use-instruction p {
+.instructions p {
 	padding: 1em;
 	border: 3px dashed var(--text-color);
 	font-weight: none;
@@ -146,24 +146,24 @@ body::-webkit-scrollbar-thumb {
 	padding: 0 2em;
 }
 
-.loading-container {
+.loading-box {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	padding-bottom: 3em;
 }
 
-.second-loading-container {
+.more-info-loading-box {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%,-50%);
+	transform: translate(-50%, -50%);
 	background-color: var(--special-color);
 	border-radius: 8px;
 }
 
 .loader,
-.second-loader {
+.more-info-loader {
 	display: inline-block;
 	border-radius: 50%;
 	animation: rotation 2s linear infinite;
@@ -175,7 +175,7 @@ body::-webkit-scrollbar-thumb {
 	border: 5px dotted var(--text-color);
 }
 
-.second-loader {
+.more-info-loader {
 	width: 96px;
 	height: 96px;
 	border: 5px dotted var(--input-color);
@@ -216,7 +216,7 @@ li img:hover {
 	transform: scale(1.05);
 }
 
-.info-container {
+.country-container {
 	padding: 2em 1em;
 }
 
@@ -241,7 +241,7 @@ li img:hover {
 	display: flex;
 }
 
-.container {
+.more-info-container {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -257,30 +257,29 @@ li img:hover {
 	z-index: 11;
 }
 
-.container div,
-.container-country-title {
+.more-info-container div,
+.more-info-title {
 	padding: 1em;
 }
 
-.container-info,
-.container div {
+.more-info-container div {
 	display: flex;
 	flex-direction: column;
 }
 
-.container-info {
+.more-info-box {
 	justify-content: center;
 	align-items: center;
 }
 
-.container-info img {
+.more-info-box img {
 	aspect-ratio: 160/80;
 	margin-top: 1em;
 	width: 100%;
 	border-radius: 8px;
 }
 
-.container-btn {
+.more-info-btn {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -289,7 +288,7 @@ li img:hover {
 	z-index: 11;
 }
 
-.container-country-title {
+.more-info-title {
 	display: block;
 	font-size: 1.2em;
 }
@@ -325,14 +324,14 @@ li img:hover {
 		padding: 0.75em;
 	}
 
-	.use-instruction p {
+	.instructions p {
 		border: none;
 		font-weight: bold;
 	}
 }
 
 @media (min-width: 600px) {
-	.second-loader {
+	.more-info-loader {
 		width: 128px;
 		height: 128px;
 	}
@@ -341,11 +340,18 @@ li img:hover {
 		grid-template-columns: repeat(2, 1fr);
 	}
 
-	.container-info img {
-		margin-top: 0;
+	.more-info-box {
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%);
 	}
 
-	.container-btn {
+	.more-info-box img {
+		margin-top: 0;
+		width: 320px;
+	}
+
+	.more-info-btn {
 		top: 0.5em;
 		right: 0.5em;
 	}
@@ -369,26 +375,32 @@ li img:hover {
 		top: 60px;
 	}
 
-	.container {
+	.more-info-container {
 		width: 70%;
 	}
 }
 
+@media (min-width: 1024px) {
+	.more-info-box img {
+		width: 100%;
+	}
+}
+
 @media (min-width: 1024px) and (min-height: 768px) {
-	.loading-container {
+	.loading-box {
 		padding-top: 50px;
 	}
 
-	.container::-webkit-scrollbar {
+	.more-info-container::-webkit-scrollbar {
 		width: 8px;
 	}
 
-	.container::-webkit-scrollbar-track {
+	.more-info-container::-webkit-scrollbar-track {
 		-webkit-box-shadow: inset 0 0 6px var(--background-color);
 		border-radius: 8px;
 	}
 
-	.container::-webkit-scrollbar-thumb {
+	.more-info-container::-webkit-scrollbar-thumb {
 		background-color: var(--scroll-color);
 		border-radius: 8px;
 	}
@@ -399,7 +411,7 @@ li img:hover {
 		font-size: 2.2em;
 	}
 
-	.use-instruction {
+	.instructions {
 		font-size: 1.4em;
 	}
 
@@ -407,12 +419,12 @@ li img:hover {
 		grid-template-columns: repeat(4, 1fr);
 	}
 
-	.container {
+	.more-info-container {
 		width: 50%;
 		font-size: 1.1em;
 	}
 
-	.container-country-title {
+	.more-info-title {
 		font-size: 1.4em;
 	}
 }

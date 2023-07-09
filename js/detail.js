@@ -1,13 +1,13 @@
 import { renderCountryDetails } from './utils.js'
 
-const secondLoaderElement = document.getElementById('second-loading-container')
+const moreInfoLoaderElement = document.getElementById('more-info-loading-box')
 
 const showLoader = () => {
-	secondLoaderElement.style.display = 'inline-block'
+	moreInfoLoaderElement.style.display = 'inline-block'
 }
 
 const hideLoader = () => {
-	secondLoaderElement.style.display = 'none'
+	moreInfoLoaderElement.style.display = 'none'
 }
 
 export const renderDetail = id => {
