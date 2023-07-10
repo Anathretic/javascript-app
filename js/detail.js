@@ -15,7 +15,8 @@ export const renderDetail = id => {
 
 	showLoader()
 
-	fetch(API_URL_DETAIL)
+	setTimeout(() => {
+		fetch(API_URL_DETAIL)
 		.then(res => res.json())
 		.then(([country]) => {
 			hideLoader()
@@ -34,8 +35,12 @@ export const renderDetail = id => {
 							.join(', ')
 					: 'N/A',
 				languages: country.languages ? Object.values(country.languages).join(', ') : 'N/A',
-				borders: country.borders ? country.borders.join(', ') : 'No border countries!',
+				borders: country.borders ? country.borders.length : 'No border countries!',
+				startOfWeek: country.startOfWeek
+					? country.startOfWeek.charAt(0).toUpperCase() + country.startOfWeek.slice(1)
+					: 'N/A',
 			}
 			renderCountryDetails(country)
 		})
+	}, 1000)
 }
