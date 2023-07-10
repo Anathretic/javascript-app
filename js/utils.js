@@ -1,3 +1,11 @@
+const createFlag = country => {
+	const flagImg = document.createElement('img')
+	flagImg.src = country.flag
+	flagImg.alt = `${country.name} flag`
+
+	return flagImg
+}
+
 // DASHBOARD
 
 const createInfoElement = (label, value) => {
@@ -15,14 +23,10 @@ const createInfoElement = (label, value) => {
 }
 
 const createFlagElement = country => {
-	const flagContainer = document.createElement('div')
-	const flagElement = document.createElement('img')
-	flagElement.src = country.flag
-	flagElement.alt = `${country.name} flag`
-	flagElement.id = `${country.code}`
+	const flagElement = createFlag(country)
+	flagElement.setAttribute ('id', `${country.code}`)
 
-	flagContainer.appendChild(flagElement)
-	return flagContainer
+	return flagElement
 }
 
 const createCountryItemElement = country => {
@@ -66,12 +70,15 @@ export const countriesList = countries => {
 const createDetailElement = country => {
 	const detailContainer = document.createElement('div')
 
-	const flagElement = createFlagElement(country)
+	const flagContainer = document.createElement('div')
+	const flagElement = createFlag(country)
+	flagContainer.appendChild(flagElement)
+	
 	const detailName = document.createElement('strong')
 	detailName.innerText = country.name
 	detailName.classList.add('more-info-title')
 
-	detailContainer.appendChild(flagElement)
+	detailContainer.appendChild(flagContainer)
 	detailContainer.appendChild(detailName)
 
 	detailContainer.appendChild(createInfoElement('Native name', country.nativeName))
@@ -82,7 +89,8 @@ const createDetailElement = country => {
 	detailContainer.appendChild(createInfoElement('Top level domain', country.topLevelDomain))
 	detailContainer.appendChild(createInfoElement('Currencies', country.currencies))
 	detailContainer.appendChild(createInfoElement('Languages', country.languages))
-	detailContainer.appendChild(createInfoElement('Border countries', country.borders))
+	detailContainer.appendChild(createInfoElement('Number of border countries', country.borders))
+	detailContainer.appendChild(createInfoElement('Start of the week', country.startOfWeek))
 
 	return detailContainer
 }

@@ -238,7 +238,7 @@ li img:hover {
 }
 
 .active {
-	display: flex;
+	display: block;
 }
 
 .more-info-container {
@@ -265,6 +265,7 @@ li img:hover {
 .more-info-container div {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 }
 
 .more-info-box {
@@ -340,17 +341,6 @@ li img:hover {
 		grid-template-columns: repeat(2, 1fr);
 	}
 
-	.more-info-box {
-		position: absolute;
-		left: 50%;
-		transform: translate(-50%);
-	}
-
-	.more-info-box img {
-		margin-top: 0;
-		width: 320px;
-	}
-
 	.more-info-btn {
 		top: 0.5em;
 		right: 0.5em;
@@ -377,12 +367,6 @@ li img:hover {
 
 	.more-info-container {
 		width: 70%;
-	}
-}
-
-@media (min-width: 1024px) {
-	.more-info-box img {
-		width: 100%;
 	}
 }
 
