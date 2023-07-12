@@ -42,5 +42,5 @@ export const renderDetail = id => {
 			}
 			renderCountryDetails(country)
 		})
-	}, 1000)
+	}, 500)
 }
