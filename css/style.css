@@ -309,15 +309,24 @@ li img:hover {
 	padding: 0.5em 1em;
 }
 
+.footer-icons .fa-solid,
 .footer-icons .fa-brands {
 	padding: 0.5em;
 	color: var(--text-color);
-	font-size: 1.5em;
 	transition: transform 0.5s;
 }
 
+.footer-icons .fa-solid:hover,
 .footer-icons .fa-brands:hover {
 	transform: rotate(360deg);
+}
+
+.footer-icons .fa-brands {
+	font-size: 1.5em;
+}
+
+.footer-icons .fa-solid {
+	font-size: 1.4em;
 }
 
 @media (max-width: 320px) {
