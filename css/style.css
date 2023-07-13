@@ -26,6 +26,10 @@
 	--scroll-color: white;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	color: var(--text-color);
 	background-color: var(--background-color);
@@ -47,6 +51,39 @@ body::-webkit-scrollbar-thumb {
 	border-radius: 8px;
 }
 
+.return-arrow {
+	position: fixed;
+	left: 50%;
+	transform: translate(-50%);
+	bottom: 1em;
+	padding: 1em;
+	background-color: var(--special-color);
+	border-radius: 50%;
+	border: none;
+	text-decoration: none;
+	transition: visibility 1s, opacity 1s;
+	cursor: pointer;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.return-arrow-icons {
+	display: flex;
+	flex-direction: column;
+	padding: 0.5em 1.1em;
+}
+
+.return-arrow-icon {
+	font-size: 1em;
+	color: var(--input-color);
+}
+
+.active-arrow {
+	visibility: visible;
+	opacity: 1;
+	z-index: 1;
+}
+
 .scroll-block {
 	overflow: hidden;
 }
@@ -64,6 +101,10 @@ body::-webkit-scrollbar-thumb {
 .header {
 	margin: auto;
 	border-bottom: 2px solid var(--special-color);
+}
+
+.header-title i {
+	display: none;
 }
 
 .header-content {
@@ -322,19 +363,16 @@ li img:hover {
 .footer-icons .footer-icon {
 	padding: 0.5em;
 	color: var(--text-color);
+	font-size: 1.4em;
 	transition: transform 0.5s;
+}
+
+.fa-house {
+	margin-left: -8px;
 }
 
 .footer-icons .footer-icon:hover {
 	transform: rotate(360deg);
-}
-
-.footer-icons .fa-brands {
-	font-size: 1.5em;
-}
-
-.footer-icons .fa-solid {
-	font-size: 1.4em;
 }
 
 @media (max-width: 300px) {
@@ -354,7 +392,17 @@ li img:hover {
 	}
 }
 
+@media (min-width:500px) {
+	.header-title i {
+		display: inline-block;
+	}
+}
+
 @media (min-width: 600px) {
+	.return-arrow-icon {
+		font-size: 1.2em;
+	}
+
 	.more-info-loader {
 		width: 128px;
 		height: 128px;
@@ -371,6 +419,11 @@ li img:hover {
 }
 
 @media (min-width: 820px) {
+	.return-arrow {
+		bottom: 2rem;
+		padding: 1.2em;
+	}
+
 	.header-content {
 		padding: 0.75em 3em;
 	}
@@ -400,6 +453,15 @@ li img:hover {
 }
 
 @media (min-width: 1024px) and (min-height: 768px) {
+	.return-arrow {
+		bottom: 3rem;
+		padding: 1.5em;
+	}
+
+	.return-arrow-icon {
+		font-size: 1.5em;
+	}
+
 	.loading-box {
 		padding-top: 50px;
 	}
@@ -416,6 +478,10 @@ li img:hover {
 	.more-info-container::-webkit-scrollbar-thumb {
 		background-color: var(--scroll-color);
 		border-radius: 8px;
+	}
+
+	.footer-icons .footer-icon {
+		padding: 1em;
 	}
 }
 
