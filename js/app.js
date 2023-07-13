@@ -6,6 +6,7 @@ const body = document.querySelector('body')
 const popup = document.querySelector('.more-info')
 const closeBtn = document.querySelector('.more-info-btn')
 const darkModeBtn = document.querySelector('.dark-mode-btn')
+const toTheTopBtn = document.querySelector('.return-arrow')
 
 renderDashboard()
 
@@ -52,6 +53,25 @@ const scrollBlock = () => {
 	}
 }
 
+const moveToTheTop = () => {
+	window.scrollTo(0, 0)
+}
+
+const handleToTheTopBtn = () => {
+	const scrollPosition = window.innerHeight + window.scrollY
+	const pageHeight = document.body.offsetHeight - 100
+
+	if (window.scrollY > 100 && scrollPosition < pageHeight) {
+		toTheTopBtn.classList.add('active-arrow')
+	} else if (scrollPosition >= pageHeight) {
+		toTheTopBtn.classList.remove('active-arrow')
+	} else {
+		toTheTopBtn.classList.remove('active-arrow')
+	}
+}
+
+toTheTopBtn.addEventListener('click', moveToTheTop)
 darkModeBtn.addEventListener('click', handleDarkMode)
-closeBtn.addEventListener('click', closePopup)
 main.addEventListener('click', showPopup)
+closeBtn.addEventListener('click', closePopup)
+window.addEventListener('scroll', handleToTheTopBtn)
