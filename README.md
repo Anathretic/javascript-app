@@ -11,6 +11,7 @@ Also added a dark mode for better UX.
 ## Links & Tools
 
 **API:** https://restcountries.com/
+
 **Inspiration:** https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca
 
 **Used:** HTML, CSS, JavaScript (incl. REST API), RWD.
