@@ -118,13 +118,23 @@ body::-webkit-scrollbar-thumb {
 
 .filters select {
 	border-right: 20px solid transparent;
+	cursor: pointer;
 }
 
-.icon {
+.search-icon,
+.bars-icon {
 	position: absolute;
-	top: 59px;
 	left: 29px;
+}
+
+.search-icon {
+	top: 59px;
 	font-size: 1em;
+}
+
+.bars-icon {
+	top: 129px;
+	font-size: 1.2em;
 }
 
 .instructions {
@@ -309,15 +319,13 @@ li img:hover {
 	padding: 0.5em 1em;
 }
 
-.footer-icons .fa-solid,
-.footer-icons .fa-brands {
+.footer-icons .footer-icon {
 	padding: 0.5em;
 	color: var(--text-color);
 	transition: transform 0.5s;
 }
 
-.footer-icons .fa-solid:hover,
-.footer-icons .fa-brands:hover {
+.footer-icons .footer-icon:hover {
 	transform: rotate(360deg);
 }
 
@@ -329,14 +337,20 @@ li img:hover {
 	font-size: 1.4em;
 }
 
+@media (max-width: 300px) {
+	.instructions p {
+		border: none;
+		font-weight: bold;
+	}
+}
+
 @media (max-width: 320px) {
 	.header-content {
 		padding: 0.75em;
 	}
 
 	.instructions p {
-		border: none;
-		font-weight: bold;
+		padding: 1em 0.5em;
 	}
 }
 
@@ -370,8 +384,14 @@ li img:hover {
 		grid-template-columns: repeat(3, 1fr);
 	}
 
-	.icon {
+	.search-icon {
 		top: 60px;
+	}
+
+	.bars-icon {
+		top: 58px;
+		left: auto;
+		right: 212px;
 	}
 
 	.more-info-container {
