@@ -16,4 +16,4 @@ Also added a dark mode for better UX.
 
 **Used:** HTML, CSS, JavaScript (incl. REST API)
 
-**URL:** Coming soon
+**URL:** [Countrypedia](https://countrypedia.online/)

@@ -100,6 +100,7 @@ body::-webkit-scrollbar-thumb {
 
 .header {
 	margin: auto;
+	height: 112px;
 	border-bottom: 2px solid var(--special-color);
 }
 
@@ -369,16 +370,56 @@ li img:hover {
 
 .fa-house {
 	margin-left: -8px;
+	pointer-events: none;
 }
 
 .footer-icons .footer-icon:hover {
 	transform: rotate(360deg);
 }
 
+.notfound {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	padding: 1em;
+}
+
+.notfound-img {
+	width: 90%;
+}
+
+.notfound-credits {
+	font-size: 0.7em;
+}
+
+.notfound-btn {
+	padding: 0.8em 3em;
+	margin: 1em;
+	background-color: #d6bfbf;
+	color: var(--text-color);
+	font-size: 1.4em;
+	text-transform: uppercase;
+	text-decoration: none;
+	border-radius: 8px;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+.notfound-btn:hover {
+	background-color: var(--special-color);
+	color: var(--background-color);
+}
+
 @media (max-width: 300px) {
 	.instructions p {
 		border: none;
 		font-weight: bold;
+	}
+
+	.notfound-btn {
+		font-size: 1.2em;
 	}
 }
 
@@ -392,9 +433,13 @@ li img:hover {
 	}
 }
 
-@media (min-width:500px) {
+@media (min-width: 500px) {
 	.header-title i {
 		display: inline-block;
+	}
+
+	.notfound-img {
+		width: 80%;
 	}
 }
 
@@ -450,6 +495,10 @@ li img:hover {
 	.more-info-container {
 		width: 70%;
 	}
+
+	.notfound-img {
+		width: 70%;
+	}
 }
 
 @media (min-width: 1024px) and (min-height: 768px) {
@@ -482,6 +531,15 @@ li img:hover {
 
 	.footer-icons .footer-icon {
 		padding: 1em;
+	}
+
+	.notfound-img {
+		width: 50%;
+	}
+
+	.notfound-btn {
+		padding: 1em 3em;
+		font-size: 1.6em;
 	}
 }
 
