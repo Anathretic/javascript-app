@@ -118,7 +118,6 @@ body::-webkit-scrollbar-thumb {
 
 .header .dark-mode-btn {
 	padding: 0.75rem;
-	height: 54px;
 	width: 52px;
 	background-color: var(--background-color);
 	color: var(--text-color);
@@ -163,20 +162,11 @@ body::-webkit-scrollbar-thumb {
 	cursor: pointer;
 }
 
-.search-icon,
-.bars-icon {
+.search-icon {
 	position: absolute;
 	left: 29px;
-}
-
-.search-icon {
 	top: 59px;
 	font-size: 1em;
-}
-
-.bars-icon {
-	top: 129px;
-	font-size: 1.2em;
 }
 
 .instructions {
@@ -484,12 +474,6 @@ li img:hover {
 
 	.search-icon {
 		top: 60px;
-	}
-
-	.bars-icon {
-		top: 58px;
-		left: auto;
-		right: 212px;
 	}
 
 	.more-info-container {
