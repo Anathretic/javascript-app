@@ -15,5 +15,3 @@ Also added a dark mode for better UX.
 **Inspiration:** [Frontend-Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca)
 
 **Used:** HTML, CSS, JavaScript (incl. REST API)
-
-**URL:** [Countrypedia](https://countrypedia.online/)
