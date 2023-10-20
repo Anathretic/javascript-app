@@ -8,6 +8,8 @@ The application also includes two filters, a search bar where you have to enter 
 
 Also added a dark mode for better UX.
 
+**It's my first approach. A better version using React can be seen** [here](https://github.com/anathretic/country-app).
+
 ## Links & Tools
 
 **API:** [Rest-Countries](https://restcountries.com/)
